@@ -1,0 +1,193 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: pink;
+  width: 100%;
+  height: 3rem;
+  z-index: 10;
+}
+
+.navbar .logo {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  padding-left: 3rem;
+  position: relative;
+}
+
+.navbar .logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar ul {
+  list-style: none;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  overflow: visible;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  padding-bottom: 20px;
+  width: 30%;
+  height: 100vh;
+  top: 3rem;
+  right: 0;
+  background-color: pink;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.navbar ul.show {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.navbar ul li {
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+  color: transparent;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.navbar ul li.show {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+}
+
+.navbar ul li a:hover {
+  color: lemonchiffon;
+}
+
+.navbar ul li a.active {
+  color: lemonchiffon;
+}
+
+.navbar .menu-btn {
+  position: relative;
+  right: 2rem;
+  height: 70%;
+  width: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.navbar .menu-btn .bar {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  height: 5px;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.navbar .menu-btn .bar::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  top: 205%;
+  width: 70%;
+  height: inherit;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.navbar .menu-btn .bar::before {
+  content: '';
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  top: -205%;
+  width: 100%;
+  height: inherit;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.navbar .menu-btn .bar.open {
+  background: transparent;
+}
+
+.navbar .menu-btn .bar.open::before {
+  width: 80%;
+  -webkit-transform: translateY(10px) rotateZ(45deg);
+          transform: translateY(10px) rotateZ(45deg);
+}
+
+.navbar .menu-btn .bar.open::after {
+  width: 80%;
+  -webkit-transform: translateY(-11px) rotateZ(-45deg);
+          transform: translateY(-11px) rotateZ(-45deg);
+}
+
+.list:nth-child(1) {
+  -webkit-transition-delay: 80ms;
+          transition-delay: 80ms;
+}
+
+.list:nth-child(2) {
+  -webkit-transition-delay: 160ms;
+          transition-delay: 160ms;
+}
+
+.list:nth-child(3) {
+  -webkit-transition-delay: 240ms;
+          transition-delay: 240ms;
+}
+
+.list:nth-child(4) {
+  -webkit-transition-delay: 320ms;
+          transition-delay: 320ms;
+}
+/*# sourceMappingURL=main.css.map */

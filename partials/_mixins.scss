@@ -1,0 +1,16 @@
+@mixin flex($j_content) {
+    display: flex;
+    justify-content: $j_content;
+    align-items: center;
+}
+
+@mixin font-fam($f_size,$f_weight) {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: $f_size;
+    font-weight: $f_weight;
+    
+}
+
+@mixin transition{
+    transition: all 500ms ease-in-out;
+}

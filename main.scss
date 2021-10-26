@@ -1,0 +1,131 @@
+@import './partials/colors';
+@import './partials/mixins';
+@import './partials/config';
+
+
+.navbar{
+    position: fixed;
+    top:0;
+    @include flex(space-between);
+    background-color: $bg-color;
+    width: 100%;
+    height: 3rem;
+    z-index: 10;
+
+    .logo{
+        @include font-fam(3rem,500);
+        padding-left: 3rem;
+        position: relative;
+
+        a{
+            text-decoration: none; 
+            color:$white;
+        }
+    }
+    
+    ul{
+        list-style: none;
+        position: absolute;
+        @include flex(space-around);
+        text-align: center;
+        overflow:visible;
+        flex-flow:column wrap;
+        padding-bottom: 20px;
+        width: 30%;
+        height: 100vh;
+        top:3rem;
+        right:0;
+        background-color: $bg-color;
+        transform: translate(100%,0);
+        @include transition;
+        
+        &.show{
+            opacity: 1;
+            transform: translate(0,0);
+        }
+
+        li{
+            transform: translateX(100vw);
+            color:transparent;
+            @include transition;
+
+            &.show {
+                transform: translateX(0); 
+               }
+
+
+            a{
+                text-decoration: none;
+                @include font-fam(1.5rem, 400);
+                color:$white;
+    
+                &:hover{
+                    color:lemonchiffon;
+                }
+                &.active{
+                    color:lemonchiffon;
+                }
+            }
+          }
+    }
+
+    .menu-btn{
+        position:relative;
+        right:2rem;
+        height:70%;
+        width: 35px;
+        @include flex(space-between);
+        cursor: pointer;
+
+        .bar{
+            position:absolute;
+            background-color:white;
+            border-radius:5px;
+            width: 100%;
+            height:5px;
+            @include transition;
+
+            &::after{
+                content:'';
+                position:absolute;
+                background-color: white;
+                border-radius:5px;
+                top: 205%;
+                width:70%;
+                height:inherit;
+                @include transition;
+            }
+
+            &::before{
+                content:'';
+                position:absolute;
+                background-color: white;
+                border-radius:5px;
+                top: -205%;
+                width:100%;
+                height:inherit;
+                @include transition;
+            }
+
+            &.open{
+                background:transparent;
+
+                &::before{
+                    width:80%;
+                    transform: translateY(10px) rotateZ(45deg) ;
+                }
+                &::after{
+                    width:80%;
+                    transform:translateY(-11px) rotateZ(-45deg) ;
+                }
+            }
+        }
+    }
+}
+
+
+@for $i from 1 through 4 {
+    .list:nth-child(#{$i}) {
+      transition-delay: ($i * 80ms) ;
+    }
+  }
